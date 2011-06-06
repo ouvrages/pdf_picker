@@ -1,0 +1,10 @@
+USAGE
+
+  ./pdf_picker <input pdf> <output pdf> <pages...>
+
+
+EXAMPLES
+
+To extract pages 1, 5, 6 and 10 of src.pdf and put them in output.pdf:
+
+  ./pdf_picker src.pdf output.pdf 1 5 6 10
