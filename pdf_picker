@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "bundler/setup"
+
+require 'prawn'
+
+if ARGV.size < 3
+  puts "usage: #$0 <input pdf> <output pdf> <pages...>"
+  exit 1
+end
+
+input, output, *pages = ARGV
+
+Prawn::Document.generate output, :skip_page_creation => true do |pdf|
+  pages.each do |page|
+    pdf.start_new_page(:template => input, :template_page => page.to_i)
+  end
+end
